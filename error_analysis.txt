@@ -1,0 +1,38 @@
+=== АНАЛИЗ ОШИБОК (fine-tuned, 2000 отзывов SST-2) ===
+
+Всего ошибок: 178
+False Positives: 101
+False Negatives: 77
+
+=== САМЫЕ УВЕРЕННЫЕ FALSE POSITIVES ===
+0.999 | worthy of the gong . 
+0.999 | a decomposition of healthy eccentric inspiration and ambition 
+0.999 | puréed mélange 
+0.999 | pure venality -- 
+0.999 | the imagined glory of their own pasts 
+0.999 | kung pow is oedekerk 's realization of his childhood dream to be in a martial-arts flick , and proves that sometimes the dreams of youth should remain just that . 
+0.999 | of empathy 
+0.999 | of the lightweight female empowerment 
+0.999 | by kevin bray , whose crisp framing , edgy camera work , and wholesale ineptitude with acting , tone and pace very obviously mark him as a video helmer making his feature debut 
+0.999 | laughable 
+
+=== САМЫЕ УВЕРЕННЫЕ FALSE NEGATIVES ===
+0.002 | romantic comedy with a fresh point of view just does n't figure in the present hollywood program . 
+0.004 | oral storytelling frozen onto film 
+0.004 | ca n't recommend it enough . 
+0.004 | tossed in 
+0.005 | goofiest 
+0.006 | little time 
+0.006 | that does n't bring you into the characters so much as it has you study them 
+0.007 | revigorates 
+0.007 | beyond road warrior , it owes enormous debts to aliens and every previous dragon drama 
+0.007 | downbeat , period-perfect biopic hammers home a heavy-handed moralistic message . 
+
+=== НАБЛЮДЕНИЯ ===
+- Сарказм и ирония: хвалебные слова в издевательской фразе модель принимает за похвалу ('worthy of the gong').
+- Отрицание в идиомах: 'can't recommend it enough' это похвала, но модель видит 'can't' и ставит негатив.
+- Отдельные слова вместо смысла: 'laughable' считается позитивом из-за 'laugh'.
+- Опечатки и редкие слова режутся токенизатором на бессмысленные куски ('revigorates', 'venality').
+- Часть ошибок не вина модели: SST-2 состоит из обрывков фраз без контекста, некоторые метки спорны.
+- Ошибки уверенные (0.999 / 0.002): порог уверенности их не отсеет, модель плохо откалибрована.
+- Длина текста на ошибки не влияет: 53 символа у ошибок против 54 в среднем.
