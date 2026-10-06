@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, f1_score
+import joblib
 
 def get_cls_embeddings(texts, batch_size=32):
     return get_embeddings(texts, tokenizer, model, batch_size)
@@ -45,6 +46,7 @@ if __name__ == "__main__":
 
     clf = LogisticRegression(max_iter=1000)
     clf.fit(X_train, y_train)
+    joblib.dump(clf, "baseline_model.pkl")
     y_pred = clf.predict(X_test)
 
     print(classification_report(y_test, y_pred))
